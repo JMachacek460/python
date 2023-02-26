@@ -11,11 +11,11 @@ with open("logfile.log", "w") as log:
     pass
 
 # Open the file for appending and save the process output to the log file
-with open("logfile.log", "a") as log:
+with open("logfile.log", "a", encoding="utf-8") as log:
     proc = subprocess.Popen(phrase_to_list, bufsize=0, stdout=subprocess.PIPE, shell=True)
 
     for byte in iter(lambda: proc.stdout.read(1), b''):
-        decoded_byte = byte.decode('cp1252')
+        decoded_byte = byte.decode('utf-8', 'ignore')
         print(decoded_byte, flush=True, end='')
         log.write(decoded_byte)
 
