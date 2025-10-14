@@ -1,0 +1,50 @@
+\documentclass[12pt]{{article}}
+
+%\usepackage[margin=1cm]{{geometry}}  % menší okraje
+\usepackage[left=5cm, right=1cm, top=1cm, bottom=1cm]{{geometry}}
+\usepackage{{fontspec}}
+\usepackage{{stackengine}}
+\usepackage{{xcolor}}  % pro práci s barvami
+\usepackage{{nopageno}}  % zruší číslování stránek
+\stackMath
+
+\newfontfamily\charisfont{{CharisSIL-Regular.ttf}}
+\newfontfamily\tengwarfont[Renderer=Graphite]{{tengtelc.ttf}}
+
+% Definice maker musí být před začátkem dokumentu!
+\newcommand{{\overlaychars}}[3]{{%
+  \hbox{{#1\kern#2#3}}%
+}}
+
+\begin{{document}}
+
+% --- STRÁNKA 1: Unicode text ---
+\charisfont
+\noindent
+%Text v běžném Unicode fontu (Charis SIL):
+
+\bigskip
+
+{upraveny_text}
+
+%{upraveny_text}
+
+\bigskip \bigskip
+\newpage
+
+% --- STRÁNKA 2: Tengwar s Graphite + správné zalamování ---
+\tengwarfont
+\sloppy  % uvolní pravidla zalamování
+\noindent
+
+%Text prevedeny na Tengwar:
+
+\bigskip
+\raggedright %zarovnání k levému okraji
+
+%\Huge  % zvětšené písmo
+%\Large
+{latex_rendered}
+
+
+\end{{document}}

@@ -1,0 +1,14 @@
+prosím o funkci ktera bude prochazet unicode_string a převádět jej na jiný string.
+bude ho procházet od začátku do konce a postupně výhodnocovat. jedná se o posloutnost znaku tengwar. 
+znaky se převadějí znak po znaku dokud se nenarazi na kličový znak '©' ten uvozuje začátek velkého písmene.
+znak '®' pak jeho konec. "velké_písmeno" může být rozdeleno na dvě části, jako oddělovač těchto části pak slouží znak '½'.
+
+normální znaky kromě bloku "velké_písmeno" se převádějí následujím způsobem
+vstup ='a' výstup='\char"0061'
+
+"velké_písmeno" se převádí takto:
+vstup='©ab½cd®' výstup='{\color{red}\overlaychars{\char"0061\char"0062}{-3pt}{\char"0063\char"0064}}'
+
+jiný příklad "velké_písmeno" není rozděleno
+
+vstup='©abcd®' výstup='{\color{red}\char"0061\char"0062\char"0063\char"0064}}

@@ -1,0 +1,11 @@
+prosím o funkci ktera bude prochazet string a převádět jej na jiný string.
+bude ho procházet od začátku do konce a postupně výhodnocovat. jedná se o posloutnost znaku tengwar. 
+znaky se převadějí bezezměny dokud se nenarazi na kličový znak '©' ten uvozuje začátek velkého písmene.
+znak '®' pak jeho konec. "velké_pismeno" může být rozdeleno na dvě části, jako oddělovač těchto části pak slouží znak '½'.
+Pokud je písmeno rozděleno na dvě části pak na konci první nebo druhé části je znak '¹',
+ který určuje do které části se přidávají samohlásky pokud následují bezprostředně za znakem '®'.
+ seznam znaků, které představují "samohlasky" budou v seznamu. Tyto "samohlasky" budou vloženy místo znaku '¹'.
+ Pokud bezprostředně za znakem '®' nenásledují "samohlasky" znak '¹' se jen vynechá.
+ příklad:
+ samohlasky =(a,i,o,u,e)
+vstup="dnes je ©1¹½p®ondeli a ne ©s¹½3®obota."  vystup="dnes je ©1o½p®ndeli a ne ©so½3®bota."
