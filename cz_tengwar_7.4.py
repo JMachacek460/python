@@ -1,4 +1,4 @@
-# převede česky text ze souboru vstup.txt do tengwaru_output.pdf
+# převede česky text ze souboru vstup.txt do tengwaru_output.pdf   
 import subprocess
 import os
 import re
